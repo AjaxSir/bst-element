@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "pnpm --filter @bst-element/play  dev",
     "docs:dev": "pnpm --filter @bst-element/docs  dev",
-    "docs:build": "pnpm --filter @bst-element/docs build"
-
+    "docs:build": "pnpm --filter @bst-element/docs build",
+    "test": "echo 'start test'"
   },
   "keywords": [],
   "author": "",
