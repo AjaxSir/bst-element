@@ -1,15 +1,47 @@
 {
   "name": "bst-element",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bst Company Component by Vue3 + Ts",
+  "main": "./dist/umd/index.umd.js",
+  "module": "./dist/es/index.js",
+  "type": "module",
+  "types": "./dist/types/core/index.d.ts",
+  "exports": {
+    "." : {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.js",
+      "types": "./dist/types/core/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/index.css"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "run-s clean build-only move-style",
+    "build-only": "run-p build-es build-umd",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css",
+    "clean": "rimraf dist"
   },
   "dependencies": {
-    "@bst-element/components": "workspace:*"
+    
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1",
+    "@bst-element/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
+  }
 }
