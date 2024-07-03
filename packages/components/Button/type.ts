@@ -1,10 +1,5 @@
-﻿/*
- * @Date: 2024-07-02 13:48:27
- * @LastEditors: xiaolong.su@bst.ai
- * @LastEditTime: 2024-07-02 13:52:25
- * @Description: 
- */
-import type { Component } from 'vue'
+﻿
+import type { Component, Ref } from 'vue'
 export type ButtonType = 'primary' | "success" | "warning" | "danger" | "info";
 export type typeNativeType = 'button' | 'reset' | 'reset';
 export type ButtonSize = 'large' | 'default' | 'small';
@@ -20,4 +15,16 @@ export interface ButtonProps {
     plain: boolean;
     round: boolean;
     disabled?: boolean;
+    useThrottle?: boolean;
+    throttleDuration?: number;
+    autofocus?: boolean;
+    loadingIcon? : string;
+}
+
+export interface ButtonEmit {
+    (e: 'click', val: MouseEvent): void;
+}
+
+export interface ButtonInstance {
+    ref: Ref<HTMLButtonElement | void>
 }

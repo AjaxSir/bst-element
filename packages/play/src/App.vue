@@ -2,6 +2,7 @@
 </script>
 
 <template>
-  <BstButton type='primary' size="small" >123</BstButton>
+  <BstButton type='primary' icon="search" size="small" >123</BstButton>
+
 </template>
 
