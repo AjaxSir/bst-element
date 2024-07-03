@@ -1,0 +1,8 @@
+{
+    "git": {
+        "push": false
+    },
+    "npm": {
+        "publish": true
+    }
+}
