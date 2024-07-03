@@ -1,1 +1,67 @@
-﻿@import './reset.css'
+﻿@import './reset.css';
+
+:root {
+  /* colors */
+  --bst-color-white: #ffffff;
+  --bst-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --bst-bg-color: #ffffff;
+  --bst-bg-color-page: #f2f3f5;
+  --bst-bg-color-overlay: #ffffff;
+  --bst-text-color-primary: #303133;
+  --bst-text-color-regular: #606266;
+  --bst-text-color-secondary: #909399;
+  --bst-text-color-placeholder: #a8abb2;
+  --bst-text-color-disabled: #c0c4cc;
+  --bst-border-color: #dcdfe6;
+  --bst-border-color-light: #e4e7ed;
+  --bst-border-color-lighter: #ebeef5;
+  --bst-border-color-extra-light: #f2f6fc;
+  --bst-border-color-dark: #d4d7de;
+  --bst-border-color-darker: #cdd0d6;
+  --bst-fill-color: #f0f2f5;
+  --bst-fill-color-light: #f5f7fa;
+  --bst-fill-color-lighter: #fafafa;
+  --bst-fill-color-extra-light: #fafcff;
+  --bst-fill-color-dark: #ebedf0;
+  --bst-fill-color-darker: #e6e8eb;
+  --bst-fill-color-blank: #ffffff;
+  
+  @each $val, $color in var(--colors) {
+    --bst-color-$(val): $(color);
+    @for $i from 3 to 9 {
+      --bst-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+    }
+    --bst-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --bst-border-width: 1px;
+  --bst-border-style: solid;
+  --bst-border-color-hover: var(--bst-text-color-disabled);
+  --bst-border: var(--bst-border-width) var(--bst-border-style) var(--bst-border-color);
+  --bst-border-radius-base: 4px;
+  --bst-border-radius-small: 2px;
+  --bst-border-radius-round: 20px;
+  --bst-border-radius-circle: 100%;
+
+  /*font*/
+  --bst-font-size-extra-large: 20px;
+  --bst-font-size-large: 18px;
+  --bst-font-size-medium: 16px;
+  --bst-font-size-base: 14px;
+  --bst-font-size-small: 13px;
+  --bst-font-size-extra-small: 12px;
+  --bst-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --bst-font-weight-primary: 500;
+
+  /*disabled*/
+  --bst-disabled-bg-color: var(--bst-fill-color-light);
+  --bst-disabled-text-color: var(--bst-text-color-placeholder);
+  --bst-disabled-border-color: var(--bst-border-color-light);
+
+  /*animation*/
+  --bst-transition-duration: 0.4s;
+  --bst-transition-duration-fast: 0.2s;
+}
