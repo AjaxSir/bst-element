@@ -8,7 +8,7 @@ import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 
 import Button from "./Button.vue";
-
+import BstIcon  from "../Icon/Icon.vue";
 describe("Button.vue", () => {
   // Props: type
   it("should has the correct type class when type prop is set", () => {
@@ -74,4 +74,23 @@ describe("Button.vue", () => {
     await wrapper.trigger("click");
     expect(wrapper.emitted().click).toHaveLength(1);
   });
+  it("should display loading icon when loading prop is set", async () => {
+    const wrapper = mount(Button, {
+      props: { loading: true },
+      global: {
+        stubs: ["BstIcon"],
+      },
+    });
+    const icon = wrapper.findComponent(BstIcon);
+
+    expect(wrapper.find('.loading-icon').exists()).toBe(true);
+
+    expect(icon.exists()).toBe(true);
+
+    expect(icon.attributes('icon')).toBe('spinner')
+
+    await wrapper.trigger('click')
+    
+    expect(wrapper.emitted("click")).toBeUndefined()
+  })
 });
