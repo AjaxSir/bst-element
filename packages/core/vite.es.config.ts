@@ -9,7 +9,8 @@ import  vue  from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 // import type { Plugin } from 'vue'
 const COM_NAME = [
-    "Button"
+    "Button",
+    "Icon"
 ]
 
 export default defineConfig({

@@ -1,6 +1,6 @@
 {
   "name": "bst-element",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Bst Company Component by Vue3 + Ts",
   "main": "./dist/umd/index.umd.js",
   "module": "./dist/es/index.js",
@@ -18,7 +18,7 @@
     }
   },
   "files": [
-    "dist"
+    "dist" 
   ],
   "sideEffects": [
     "./dist/index.css"
